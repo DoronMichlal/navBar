@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+        /* background: rgb(238, 174, 202); */
+        background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+      }
+
+      /* nav tag */
+      .navigation-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #000;
+        z-index: 1;
+      }
+
+      /* a tag */
+      .nav-logo {
+        text-decoration: none;
+        font-size: 2.5em;
+        color: #ff577f;
+      }
+
+      /* ul tag */
+      .nav-items {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        font-size: 1.2em;
+      }
+
+      /* li > a tag */
+      .nav-item {
+        text-decoration: none;
+        padding: 0.5em 1em;
+        margin: 0 5px;
+        transition: all 0.2s ease-in-out;
+        color: #af0069;
+      }
+
+      .nav-item:hover {
+        background: #ff577f;
+      }
+
+      /* hamburger menu */
+      .hamburger-menu {
+        height: 1.2rem;
+        width: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        display: none;
+        background-color: transparent;
+        z-index: 1;
+      }
+
+      .line1,
+      .line2,
+      .line3 {
+        width: 1.5rem;
+        height: 0.1rem;
+        background-color: #111111;
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* MEDIA QUERY - MOBILE */
+      @media (max-width: 767px) {
+        .hamburger-menu {
+          display: flex;
+        }
+
+        .nav-items {
+          flex-direction: column;
+          justify-content: space-around;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: 100vh;
+          /* width: 100vw; */
+          transform: translateX(100vw);
+          background-color: #2270ff;
+          transition: transform 0.2s ease-in-out;
+        }
+
+        .nav-items li {
+          width: 100vw;
+          height: 100%;
+        }
+
+        .nav-items li a {
+          color: #ffffff;
+          font-size: 5vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        .nav-items.open {
+          transform: translateX(0);
+        }
+
+        .hamburger-menu.open > .line1 {
+          transform: rotate(-45deg) translate(-0.8rem);
+          background-color: #fff;
+        }
+
+        .hamburger-menu.open > .line2 {
+          transform: translateX(100px);
+        }
+
+        .hamburger-menu.open > .line3 {
+          transform: rotate(45deg) translate(-0.8rem);
+          background-color: #fff;
+        }
+      }
+    </style>
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav class="navigation-bar">
+      <a href="#" class="nav-logo">Logo</a>
+
+      <div class="hamburger-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <ul class="nav-items">
+        <li><a href="#" class="nav-item">Home</a></li>
+        <li><a href="#" class="nav-item">About</a></li>
+        <li><a href="#" class="nav-item">Map</a></li>
+        <li><a href="#" class="nav-item">Catalog</a></li>
+        <li><a href="#" class="nav-item">Contact</a></li>
+      </ul>
+    </nav>
+
+    <p style="padding: 100px">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic accusantium reiciendis sequi
+      ipsum? Iste quas error, quia temporibus porro unde soluta nulla commodi reiciendis eius
+      repellendus nihil debitis ea, quisquam autem delectus inventore deleniti necessitatibus,
+      voluptatem ullam animi iusto distinctio aperiam numquam? Laboriosam minima, repudiandae, omnis
+      unde commodi facere culpa dicta animi dolorum iure, sequi quis deleniti et incidunt ad eum
+      neque temporibus! Quis nobis porro expedita deserunt doloremque optio quae! Omnis dolore
+      quibusdam sed perferendis illo magnam, repudiandae commodi voluptatibus voluptatum facilis
+      voluptate aspernatur, provident reprehenderit quos dicta nemo animi iusto maxime qui expedita
+      et! Sapiente obcaecati possimus vel.
+    </p>
+    <p style="padding: 100px">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic accusantium reiciendis sequi
+      ipsum? Iste quas error, quia temporibus porro unde soluta nulla commodi reiciendis eius
+      repellendus nihil debitis ea, quisquam autem delectus inventore deleniti necessitatibus,
+      voluptatem ullam animi iusto distinctio aperiam numquam? Laboriosam minima, repudiandae, omnis
+      unde commodi facere culpa dicta animi dolorum iure, sequi quis deleniti et incidunt ad eum
+      neque temporibus! Quis nobis porro expedita deserunt doloremque optio quae! Omnis dolore
+      quibusdam sed perferendis illo magnam, repudiandae commodi voluptatibus voluptatum facilis
+      voluptate aspernatur, provident reprehenderit quos dicta nemo animi iusto maxime qui expedita
+      et! Sapiente obcaecati possimus vel.
+    </p>
+  </body>
+</html>
